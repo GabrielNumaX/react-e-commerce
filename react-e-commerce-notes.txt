@@ -1,0 +1,81 @@
+Mirar abajo para logic from qaifi's 
+
+App.js maneja las rutas, 
+HomePage es class based y pasa response de axios como props
+para que cargue ropas o accesorios (Clothes.js, Accessories.js)
+
+
+
+
+---------------------------------------------------------------
+
+logic to implement from
+
+https://github.com/qaifikhan/JPMC-React-Training-27Nov/tree/master/src
+
+App.js
+
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
+import HomePage
+import ProductDetails
+import Topbar
+import NotFound
+
+class based
+
+render() {
+
+  return(
+    <BrowserRouter>
+      <div className="App">
+        <Topbar />
+        
+ 	<Swith>
+  	  <Route path="/details/:productId"
+		         component={ProductDetails} />
+	  <Route exact path"/"
+		             component={HomePage} />
+	  <Route component={NotFound} />
+	</Swich>
+	//faltaria el footer
+      </div>
+    <BrowserRouter>
+  );
+
+}
+
+export default App;
+
+********************************************
+
+HomePage.js
+
+importa la ProductList el array con Obj no se para que
+
+import ABcard from './ProductCard'; //no se para que
+
+class based
+
+state = {
+  showClothingList: true,
+  showAccessoryList: true,
+  productListData: null,
+  showLoader: true
+}
+
+
+//tiene un par de functions que no se para que son
+
+//y despues
+
+componentDidMount() {
+    Axios.get('http://5d76bf96515d1a0014085cf9.mockapi.io/product')
+    .then(response => this.setState({productListData: response.data, showLoader: false}))
+    .catch(error => {
+      console.log('List call failed')
+    })
+  }
+
+
+

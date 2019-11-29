@@ -1,0 +1,14 @@
+
+.MainDiv {
+    margin-top: 60px;
+}
+
+.ClothesDiv{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}

@@ -1,0 +1,66 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+  background-color: lightblue;
+  position: fixed;
+  top: 0;
+  height: 60px;
+  width: 100%;
+}
+
+.divLinks {
+    margin-left: 30px;
+}
+
+.divLinks a {
+    text-decoration: none;
+    color: black;
+    font-size: 28px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.divLinks a:first-of-type {
+    font-weight: bold;
+}
+
+.divShop {
+    margin-right: 30px;
+}
+
+.divShop img {
+display: inline-block;
+}
+
+.shoppingCart {
+height: 30px;
+display: inline-block;
+position: relative;
+margin-right: 18px;
+margin-bottom: 4px;
+cursor: pointer;
+border-radius: 50%;
+}
+
+.shopCounter {
+display: inline-block;
+position: absolute;
+top: 5px;
+right: 92px;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background-color: white;
+text-align: center;
+padding-bottom: 2px;
+}
+
+.profilePic {
+display: inline-block;
+width: 50px;
+background-color: white;
+border-radius: 50%;
+margin: auto;
+}
