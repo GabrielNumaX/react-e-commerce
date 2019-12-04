@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
+.DetailsDiv {
+    margin-top: 100px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    
+
+}
+
+.AsideImg {
+    width: 30%;
+    height: auto;
+}
+
+.AsideImg img{
+    width: 100%;
+    height: auto;  
+}
+
+.AsideDetails {
+    width: 60%;
+    height: 400px;
+    background-color: lightblue;
+}
+
+h1, h2, h3, h4 {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    padding: 20px 0 0 20px;
+}
+
+h2 {
+    padding: 20px 0 20px 20px;
+}
+
+h3 {
+    padding: 0 0 20px 20px;
+}
+
+h4 {
+    padding: 10px 0 20px 20px;
+}
+
+.PreviewContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.PreviewContainer button {
+    margin: 0 auto;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.PreviewDiv {
+    margin-left: 20px;
+    width: 80%;
+    height: 150px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.PreviewDiv img {
+    width: 19%;
+    height: auto;
+    cursor: pointer;
+}

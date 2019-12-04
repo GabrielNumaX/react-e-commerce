@@ -1,8 +1,22 @@
 .ClothCard {
     width: 20%;
-    height: 420px;
+    height: 460px;
     margin: 0 5% 50px;
     background-color: lightblue;
+    -webkit-box-shadow: 1px 1px 8px 7px rgba(0,0,0,0.5);
+    -moz-box-shadow: 1px 1px 8px 7px rgba(0,0,0,0.5);
+    box-shadow: 1px 1px 8px 7px rgba(0,0,0,0.5);    
+}
+
+.AccessCard {
+    width: 20%;
+    height: 460px;
+    margin: 0 5% 50px;
+    background-color: lightblue;
+    -webkit-box-shadow: 1px 1px 8px 7px rgba(0,0,0,0.5);
+    -moz-box-shadow: 1px 1px 8px 7px rgba(0,0,0,0.5);
+    box-shadow: 1px 1px 8px 7px rgba(0,0,0,0.5);    
+
 }
 
 
@@ -14,7 +28,7 @@
 
 h3 {
     font-size: 14px;
-    padding: 0 1%;
+    padding: 0 3%;
 }
 
 h4, h5 {

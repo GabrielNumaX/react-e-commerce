@@ -3,6 +3,10 @@
     margin-top: 60px;
 }
 
+h2 {
+    padding: 20px 0;
+}
+
 .ClothesDiv{
     width: 100%;
     height: auto;

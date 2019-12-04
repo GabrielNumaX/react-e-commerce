@@ -4,6 +4,8 @@ import './App.css';
 
 import Header from './Header';
 import HomePage from './HomePage';
+import Details from './Details';
+import Footer from './Footer';
 
 class App extends Component {
 
@@ -17,12 +19,20 @@ class App extends Component {
     return (
 
       <BrowserRouter>
+
         <div className="App">
           <Header shopCart={this.state.shopCartCount}>
   
           </Header>
 
-          <Route exact path="/" component={HomePage}/>  
+          <Route exact path="/" component={HomePage}/> 
+          <Route path="/details/:prodId" 
+                render={(props) => <Details {...props} /> } />
+                                        
+                                                
+
+
+           <Footer></Footer>
   
         </div>    
       </BrowserRouter>

@@ -4,6 +4,7 @@ import Axios from 'axios';
 import css from './HomePage.module.css';
 
 import Clothes from './Clothes';
+import Accessories from './Accessories';
 
 
 class HomePage extends Component {
@@ -37,7 +38,11 @@ class HomePage extends Component {
                     <Clothes data={this.state.dataFromAPI}/>
                 </div>
 
-                
+                <h2>Accessories for Men and Women</h2>
+
+                <div className={css.ClothesDiv}>
+                    <Accessories data={this.state.dataFromAPI}/>
+                </div>  
 
             </div>
         );
