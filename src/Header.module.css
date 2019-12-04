@@ -14,7 +14,7 @@
     margin-left: 30px;
 }
 
-.divLinks a {
+.Shoplane {
     text-decoration: none;
     color: black;
     font-size: 28px;
@@ -22,7 +22,7 @@
     margin-right: 8px;
 }
 
-.divLinks a:first-of-type {
+.Shoplane:first-of-type {
     font-weight: bold;
 }
 

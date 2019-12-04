@@ -1,5 +1,6 @@
 import React from 'react';
 
+import {Link} from 'react-router-dom';
 
 import css from './Header.module.css';
 
@@ -13,9 +14,12 @@ const Header = (props) => {
 
         <header className={css.header}>
             <div className={css.divLinks}>
-                <a href="#">SHOPLANE</a>
-                <a href="#">CLOTHING</a>
-                <a href="#">ACCESORIES</a>
+                <Link style={{textDecoration: 'none'}} to={'/'}>
+                    <a className={css.Shoplane} href="#">SHOPLANE</a>
+                    <a className={css.Shoplane} href="#">CLOTHING</a>
+                    <a className={css.Shoplane} href="#">ACCESORIES</a>
+                </Link>
+                
             </div>
 
             <div className={css.divShop}>

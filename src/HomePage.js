@@ -32,13 +32,17 @@ class HomePage extends Component {
         return(
             <div className={css.MainDiv}>
 
-                <h2>Men and Women Clothings</h2>
+                <h2 className={css.h2}>
+                    Men and Women Clothings
+                </h2>
 
                 <div className={css.ClothesDiv}>
                     <Clothes data={this.state.dataFromAPI}/>
                 </div>
 
-                <h2>Accessories for Men and Women</h2>
+                <h2 className={css.h2}>
+                    Accessories for Men and Women
+                </h2>
 
                 <div className={css.ClothesDiv}>
                     <Accessories data={this.state.dataFromAPI}/>

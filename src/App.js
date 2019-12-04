@@ -24,13 +24,14 @@ class App extends Component {
           <Header shopCart={this.state.shopCartCount}>
   
           </Header>
+          
+          <Switch>
 
-          <Route exact path="/" component={HomePage}/> 
-          <Route path="/details/:prodId" 
-                render={(props) => <Details {...props} /> } />
+            <Route exact path="/" component={HomePage}/> 
+            <Route path="/details/:prodId" 
+                  render={(props) => <Details {...props} /> } />
                                         
-                                                
-
+          </Switch>
 
            <Footer></Footer>
   
