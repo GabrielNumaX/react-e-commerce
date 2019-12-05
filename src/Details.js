@@ -1,5 +1,6 @@
 import React, {Component}from 'react';
 import axios from 'axios';
+import {connect} from 'react-redux';
 
 // import {Link} from 'react-router-dom';
 
@@ -11,6 +12,8 @@ class Details extends Component {
         uniqueProdObj: {},
         prodPhotosArr: [],
     }
+
+    
 
     getId = () => {
         this.pId = this.props.match.params.prodId;
@@ -39,12 +42,12 @@ class Details extends Component {
         // console.log(this.props)
         // console.log(this.props.match.params.prodId)
         console.log(this.state.uniqueProdObj)
-        console.log(this.state.prodPhotosArr)
+        // console.log(this.state.prodPhotosArr)
 
-        const imgs = this.state.prodPhotosArr.map(item => {
+        const imgs = this.state.prodPhotosArr.map((item, pos) => {
 
             return(
-                <img src={item} alt="product"/>
+                <img key={pos} src={item} alt="product"/>
             );
         })
 
@@ -65,7 +68,9 @@ class Details extends Component {
                         <div className={css.PreviewDiv}>
                         {imgs}
                         </div>
-                        <button>Add to Cart</button>
+                        <button onClick={() => this.props.onItemShop(this.state.uniqueProdObj)}>
+                            Add to Cart
+                        </button>
                     </div>
                     
                 </aside>
@@ -75,4 +80,14 @@ class Details extends Component {
     } //end render
 } //end class
 
-export default Details;
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onItemShop: (shopItem) => {
+            dispatch({type: 'SHOP_CART_ADD', shopObj: shopItem})
+        }
+    }
+}
+export default connect(null, mapDispatchToProps)(Details);
+
+// export default Details;

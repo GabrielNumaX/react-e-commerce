@@ -1,0 +1,43 @@
+Issue on passing this.state.obj to an array in redux
+globalStore
+
+this is the STORE in MainReducer.js
+
+const initialState = {
+    totalCart: 
+    //this empty array here
+    shopItems: [],
+    // shopObj: {}
+  }
+
+and this is the handling of the store
+
+ const MainReducer = (previousState = initialState, action) => {
+    if(action.type === 'SHOP_CART_ADD'){
+      // alert('cart add');
+       return {...previousState, 
+                  totalCart: previousState.totalCart + 1,
+		//this line here
+                  shopItems: previousState.shopItems.push(action.shopObj)};
+    }...
+
+I managed to used this action in the same Component's button
+in Details.js with mapDispatchToProps in the following way
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onItemShop: (shopItem) => {
+            dispatch({type: 'SHOP_CART_ADD', shopObj: shopItem})
+        }
+    }
+}
+
+and using the method in the button this way
+
+<button onClick={() => this.props.onItemShop(this.state.uniqueProdObj)}>
+  Add to Cart
+</button>
+
+
+
+

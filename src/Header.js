@@ -2,6 +2,8 @@ import React from 'react';
 
 import {Link} from 'react-router-dom';
 
+import {connect} from 'react-redux';
+
 import css from './Header.module.css';
 
 import images from './img/images.png';
@@ -15,9 +17,9 @@ const Header = (props) => {
         <header className={css.header}>
             <div className={css.divLinks}>
                 <Link style={{textDecoration: 'none'}} to={'/'}>
-                    <a className={css.Shoplane} href="#">SHOPLANE</a>
-                    <a className={css.Shoplane} href="#">CLOTHING</a>
-                    <a className={css.Shoplane} href="#">ACCESORIES</a>
+                    <nav className={css.Shoplane} >SHOPLANE</nav>
+                    <nav className={css.Shoplane} >CLOTHING</nav>
+                    <nav className={css.Shoplane} >ACCESORIES</nav>
                 </Link>
                 
             </div>
@@ -37,4 +39,10 @@ const Header = (props) => {
 
 } //end class
 
-export default Header;
+const mapGlobalStateToProps = (globalState) => {
+    return {
+        shopCart: globalState.totalCart
+    }
+}
+
+export default connect (mapGlobalStateToProps)(Header);

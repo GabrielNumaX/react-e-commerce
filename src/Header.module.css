@@ -15,6 +15,7 @@
 }
 
 .Shoplane {
+    display: inline;
     text-decoration: none;
     color: black;
     font-size: 28px;
