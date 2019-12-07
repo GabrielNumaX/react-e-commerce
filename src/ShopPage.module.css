@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+.ShopDiv {
+    margin-top: 60px;
+    height: auto;
+    width: 100%;   
+}
+
+.CheckoutDiv {
+    height: 100px;
+    width: 100%;
+}
+
+.CheckoutDiv h2, .CheckoutDiv h5 {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    padding-left: 10%;
+}
+
+.CheckoutDiv h2 {
+    font-size: 38px;
+}
+
+.CheckoutDiv h5 {
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+
+
+.Main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.LeftProdList {
+    width: 40%;
+    height: 200px;
+    background-color: lightblue;
+}
+
+.RightAmount {
+    width: 30%;
+    height: 200px;
+    background-color: lightblue;
+    text-align: left;
+}
+
+.RightAmount h2, .RightAmount h5 {
+    margin: 0;
+    padding: 0;
+}
+
+.RightAmount h2 {
+    margin-top: 10px;
+    margin-left: 8%;
+}
+
+.RightAmount h5 {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left: 8%;
+}
+
+button {
+    margin-top: 20px;
+    margin-left: 8%;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

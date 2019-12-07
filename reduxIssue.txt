@@ -38,6 +38,36 @@ and using the method in the button this way
   Add to Cart
 </button>
 
+i'm logging the STORE in index.js this way
 
+globalStore.subscribe(() => {
+    console.log(globalStore.getState());
+ })
 
+on the first click of the button it's incrementing the cartCount
+and logging:
+
+Object { totalCart: 1, shopItems: 1 }
+index.js:15
+
+and in the second click it's breaking and returning:
+
+TypeError: previousState.shopItems.push is not a function 
+2 MainReducer.js:17
+
+the first thing i don't get is why it's not returning and array with the object but instead: shopItems: 1
+
+and second why it's breaking on the second click and returning that error
+message.
+
+What i'm trying to do is keep objects in the globalStore after clicking
+ADD TO CART button to then on the next page use that to render the list
+of added items from there and so on...
+
+this is kinda the same logic we used previously with localStorage so it's 
+not really complex to follow along
+
+I've googled this particular issue but found nothing on passing an object
+as parameter to a redux action and I don't realize what I'm not doing
+correctly.
 

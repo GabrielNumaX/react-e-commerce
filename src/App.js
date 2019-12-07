@@ -7,6 +7,7 @@ import './App.css';
 import Header from './Header';
 import HomePage from './HomePage';
 import Details from './Details';
+import ShopPage from './ShopPage';
 import Footer from './Footer';
 
 class App extends Component {
@@ -35,6 +36,7 @@ class App extends Component {
                   // shopItem
                   // onBtnClick={() => this.props.onItemShop(obj)}
                   /> } />
+            <Route path="/confirmation" component={ShopPage} />
                                         
           </Switch>
 
@@ -49,6 +51,10 @@ class App extends Component {
 } //end class
 
 export default App;
+
+
+// instead of doing this and passing function as props I did this
+// in Component and passes function to button's onClick
 
 // const mapDispatchToProps = (dispatch) => {
 //   return {

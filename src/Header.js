@@ -25,9 +25,11 @@ const Header = (props) => {
             </div>
 
             <div className={css.divShop}>
-                <img className={css.shoppingCart}
-                    src={shoppingCart} alt="shopping cart">
-                </img>
+                <Link to={'/confirmation'}>
+                    <img className={css.shoppingCart}
+                        src={shoppingCart} alt="shopping cart">
+                    </img>
+                </Link>
                 <div className={css.shopCounter}>{props.shopCart}</div>
                 <img className={css.profilePic}
                     src={images} alt="profile pic">

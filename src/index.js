@@ -10,12 +10,10 @@ import MainReducer from './Redux/MainReducer';
 
 const globalStore = createStore(MainReducer);
 
-// this is returnin undefined in console why???
+
 globalStore.subscribe(() => {
     console.log(globalStore.getState());
  })
-
-
 
 
 ReactDOM.render(<Provider store={globalStore}><App /></Provider>, 
