@@ -22,40 +22,6 @@ class Details extends Component {
         return this.pId;
      }
     
-
-    //  // prodArr comes from STORE and prodObj from state
-    // function compareIds(prodArr, prodObj) {
-        
-    //     let foundIndex = -1;
-
-    //   //checks for index of list.id
-    //   for(let i = 0; i < prodArr.length; i++){
-    //     if(parseInt(prodArr[i].id) === parseInt(prodObj.id)){
-    //       foundIndex = i;
-    //     }
-    //   } //end for
-
-    //   //with the index updates count in list and updates localStorage
-    //   if(foundIndex > -1){
-    //     prodArr[foundIndex].count += 1;
-
-    //     //here I have to update globalStore
-
-    //     console.log('found');
-    //   }
-    //   //index NOT found. creates counter. pushes OBJ to list
-    //   else {
-    //     console.log('not found');
-    //     prodObj.count = 1;
-
-    //     prodArr.push(prodObj)
-
-    //     // productList.push(currentObj);
-    //   }
-
-    //   return 
-    // }
-
     componentDidMount() {
 
         axios.get('https://5d76bf96515d1a0014085cf9.mockapi.io/product/' + this.getId())
@@ -77,10 +43,46 @@ class Details extends Component {
 
         //this print count: 1
         console.log(this.state.uniqueProdObj);
-        // this.props.loadCurrentObj(this.state.uniqueProdObj)
 
         //this prints count: 0 -> it's like when obj is being pushed it's not updated yet
         console.log(this.props.shopItemsArr);
+
+        // this.props.loadCurrentObj(this.state.uniqueProdObj)
+
+        if(!Array.isArray(this.props.shopItemsArr.length) && !this.props.shopItemsArr.length){
+
+            this.props.loadCurrentObj(this.state.uniqueProdObj);
+
+        }
+        else {
+
+            let foundIndex = -1
+
+            this.props.shopItemsArr.map((item, pos) => {
+
+                console.log('state', this.state.uniqueProdObj.id)
+                console.log('item', item.id)
+
+                if(this.state.uniqueProdObj.id === item.id){
+                    foundIndex = pos
+                    
+                    return foundIndex;
+                }
+            })
+            
+            if(foundIndex > -1){
+
+                this.props.onIndexFound(foundIndex, 0);
+            }
+
+            else {
+
+                this.props.loadCurrentObj(this.state.uniqueProdObj);
+
+            }
+        }
+
+        
     }
 
     onItemAdd = () => {
@@ -96,21 +98,32 @@ class Details extends Component {
             //THE PROBLEM IS HERE, count IT'S NOT UPDATED WHEN IT'S PUSHED INTO ARRAY
             //try ASYNC AWAIT???
 
+            //THIS IS NOT WORKING EITHER
+            // const updateCount  =  async () => {
+
+            //     this.setState({
+            //         uniqueProdObj: {...this.state.uniqueProdObj,
+            //             count: 1}
+            //     });
+                
+
+            //     return await this.props.loadCurrentObj(this.state.uniqueProdObj);
+
+            // }
+
+            // updateCount();
+
+            console.log('empty array');
+
+            this.setState({
+                uniqueProdObj: {
+                    ...this.state.uniqueProdObj,
+                    count: 1}
+            });
 
 
-            const updateCount  =  async () => {
-
-                (this.setState({
-                    uniqueProdObj: {...this.state.uniqueProdObj,
-                        count: 1}
-                })
-                );
-
-                return this.props.loadCurrentObj(this.state.uniqueProdObj);
-
-            }
-
-            updateCount();
+            // this pushes the object but doesn't updates count: 1 - due to asynchronicity???
+            // this.props.loadCurrentObj(this.state.uniqueProdObj)
 
             
         } 
@@ -120,9 +133,17 @@ class Details extends Component {
 
             this.props.shopItemsArr.map((item, pos) => {
 
+                console.log('state', this.state.uniqueProdObj.id)
+                console.log('item', item.id)
+
                 if(this.state.uniqueProdObj.id === item.id){
                     foundIndex = pos
-                }             
+
+                    // since 
+                    
+                }     
+                
+                return foundIndex;
             })
 
             //with that index UPDATE the array position and count key
@@ -133,9 +154,10 @@ class Details extends Component {
     
             }
 
+
         }
 
-        console.log(this.props.shopItemsArr);
+        // console.log(this.props.shopItemsArr);
         
     } // end onItemAdd
 
