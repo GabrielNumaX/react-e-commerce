@@ -32,7 +32,7 @@ const initialState = {
   const MainReducer = (previousState = initialState, action) => {
     if(action.type === 'SHOP_CART_ADD'){
       // alert('cart add');
-      previousState.shopItems.push(action.shopObj)
+      // previousState.shopItems.push(action.shopObj)
       // console.log(previousState.shopItems.push(action.shopObj));
        return {...previousState, 
                   totalCart: previousState.totalCart + 1,

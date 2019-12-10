@@ -121,6 +121,10 @@ class Details extends Component {
                     count: 1}
             });
 
+            //this here it's not working
+            this.props.onItemShop();
+
+            console.log('click');
 
             // this pushes the object but doesn't updates count: 1 - due to asynchronicity???
             // this.props.loadCurrentObj(this.state.uniqueProdObj)
@@ -145,6 +149,8 @@ class Details extends Component {
                 
                 return foundIndex;
             })
+
+            this.props.onItemShop();
 
             //with that index UPDATE the array position and count key
 
@@ -337,8 +343,8 @@ const mapGlobalStateToProps = (globalState) => {
 // this writes to STORE
 const mapDispatchToProps = (dispatch) => {
     return {
-        onItemShop: (shopItem) => {
-            dispatch({type: 'SHOP_CART_ADD', shopObj: shopItem})        
+        onItemShop: () => {
+            dispatch({type: 'SHOP_CART_ADD'})        
         },
         loadCurrentObj: (shopItem) => {
             dispatch({type: 'PUSH_OBJ_TO_ARR', shopObj: shopItem})
