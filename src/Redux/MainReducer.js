@@ -39,7 +39,7 @@ const initialState = {
         };
     }
 
-    // this was added to copy localStore logic from e-comm jquery project
+    // this was added to copy localStore logic from jquery e-comm  project
     else if(action.type === 'PUSH_OBJ_TO_ARR'){
 
       previousState.shopItems.push(action.shopObj);
@@ -62,6 +62,12 @@ const initialState = {
     //             shopItems: previousState.shopItems.push(action.itemObj)}
     // }
   
+    else if(action.type === 'SET_FROM_LOCAL_STORAGE'){
+
+      previousState.shopItems = JSON.parse(action.jsonFromLocalStorage)
+
+      return {...previousState};
+    }
     return {...previousState}
   }
   

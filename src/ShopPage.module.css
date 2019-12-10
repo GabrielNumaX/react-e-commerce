@@ -4,7 +4,7 @@
 
 .ShopDiv {
     margin-top: 60px;
-    height: auto;
+    height: calc(100vh - 60px);
     width: 100%;   
 }
 
@@ -29,8 +29,6 @@
     margin-top: 5px;
 }
 
-
-
 .Main {
     width: 100%;
     height: auto;
@@ -41,9 +39,60 @@
 }
 
 .LeftProdList {
-    width: 40%;
-    height: 200px;
+    width: 50%;
+    min-height: 200px;
+    max-height: 550px;
+    overflow: auto;
     background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ImgDiv {
+    width: 98%;
+    height: 110px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* align-items: flex-start; */
+}
+
+.ImgDiv > img {
+    /* width: 15%; */
+    height: 105px;
+}
+.TextDiv {
+    width: 80%;
+    height: 100%;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    /* align-items: flex-start; */
+}
+.TextDiv > h3, .TextDiv > h4, .TextDiv > h5 {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+/* name */
+.TextDiv > h3 {
+    padding-top: 1%;
+}
+
+/* quantity */
+.TextDiv > h5 {
+    padding-top: 3%;
+    font-size: 16px;
+}
+
+/* price */
+.TextDiv > h4 {
+    padding-top: 3%;
 }
 
 .RightAmount {

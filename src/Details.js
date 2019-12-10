@@ -42,10 +42,10 @@ class Details extends Component {
     componentDidUpdate() {
 
         //this print count: 1
-        console.log(this.state.uniqueProdObj);
+        // console.log(this.state.uniqueProdObj);
 
         //this prints count: 0 -> it's like when obj is being pushed it's not updated yet
-        console.log(this.props.shopItemsArr);
+        // console.log(this.props.shopItemsArr);
 
         // this.props.loadCurrentObj(this.state.uniqueProdObj)
 
@@ -60,14 +60,16 @@ class Details extends Component {
 
             this.props.shopItemsArr.map((item, pos) => {
 
-                console.log('state', this.state.uniqueProdObj.id)
-                console.log('item', item.id)
+                // console.log('state', this.state.uniqueProdObj.id)
+                // console.log('item', item.id)
 
                 if(this.state.uniqueProdObj.id === item.id){
                     foundIndex = pos
                     
                     return foundIndex;
                 }
+
+                return null;
             })
             
             if(foundIndex > -1){
@@ -82,8 +84,36 @@ class Details extends Component {
             }
         }
 
-        
+             
     }
+
+    // localStorageCheck = () => {
+
+    //   let productList = localStorage.getItem('prodList');
+
+    //   productList = productList === null || productList === '' ? [] : productList;
+
+    //   productList = productList.length > 0 ? JSON.parse(productList) : [];
+
+    //   var foundIndex = -1;
+
+    //   for(var i = 0; i < productList.length; i++){
+    //     if(productList[i].id === this.state.uniqueProdObj.id){
+    //       foundIndex = i;
+    //     }
+    //   } 
+
+    //   if(foundIndex > -1){
+    //     productList[foundIndex].count += 1;
+    //     localStorage.setItem('prodList', JSON.stringify(productList));
+    //   }
+    //   else {
+    //     // currentObj.count = 1;
+    //     productList.push(this.state.uniqueProdObj);
+    //     localStorage.setItem('prodList', JSON.stringify(productList));
+    //   }
+
+    // }
 
     onItemAdd = () => {
 
@@ -95,25 +125,7 @@ class Details extends Component {
             //if NOT sets count in prodObj to 1
             //and should increase shopCart count and push OBJ to Array from global Store
 
-            //THE PROBLEM IS HERE, count IT'S NOT UPDATED WHEN IT'S PUSHED INTO ARRAY
-            //try ASYNC AWAIT???
-
-            //THIS IS NOT WORKING EITHER
-            // const updateCount  =  async () => {
-
-            //     this.setState({
-            //         uniqueProdObj: {...this.state.uniqueProdObj,
-            //             count: 1}
-            //     });
-                
-
-            //     return await this.props.loadCurrentObj(this.state.uniqueProdObj);
-
-            // }
-
-            // updateCount();
-
-            console.log('empty array');
+            // console.log('empty array');
 
             this.setState({
                 uniqueProdObj: {
@@ -122,32 +134,30 @@ class Details extends Component {
             });
 
             //this here it's not working
-            this.props.onItemShop();
+            // this.props.onItemShop();
 
-            console.log('click');
+            // console.log('click');
 
             // this pushes the object but doesn't updates count: 1 - due to asynchronicity???
             // this.props.loadCurrentObj(this.state.uniqueProdObj)
 
             
         } 
-
         //else finds index in array
         else {
 
             this.props.shopItemsArr.map((item, pos) => {
 
-                console.log('state', this.state.uniqueProdObj.id)
-                console.log('item', item.id)
+                // console.log('state', this.state.uniqueProdObj.id)
+                // console.log('item', item.id)
 
                 if(this.state.uniqueProdObj.id === item.id){
                     foundIndex = pos
 
-                    // since 
-                    
+                    return foundIndex;
                 }     
                 
-                return foundIndex;
+                return null;
             })
 
             this.props.onItemShop();
@@ -160,11 +170,12 @@ class Details extends Component {
     
             }
 
-
         }
 
-        // console.log(this.props.shopItemsArr);
-        
+        localStorage.setItem('prodList', JSON.stringify(this.props.shopItemsArr));
+
+        this.localStorageCheck();
+
     } // end onItemAdd
 
     render() {
