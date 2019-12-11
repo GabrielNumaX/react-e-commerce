@@ -53,6 +53,12 @@ class ShopPage extends Component {
     
     }
 
+    onBuyEmptyCartData = () => {
+
+        this.props.emptyReduxState();
+        localStorage.clear();
+
+    }
 
     render() {
 
@@ -104,10 +110,11 @@ class ShopPage extends Component {
 
                         <h2>Total Amount</h2>
 
-                        <h5>Total Order: $ {price}</h5> {/* calculation from this.props.shopItemsArr*/}
+                        <h5>Total Order: $ {price}</h5> 
+                        {/* calculation from this.props.shopItemsArr*/}
 
                         <Link to={'/checkout'}>
-                            <button>Buy Now</button>
+                            <button onClick={this.onBuyEmptyCartData}>Buy Now</button>
                         </Link>
 
                     </aside>
@@ -134,6 +141,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         setCartFromLocalStorage: (json) => {
             dispatch({type: 'SET_CART_FROM_LOCAL_STORAGE', jsonFromLocalStorage: json})
+        },
+        emptyReduxState: () => {
+            dispatch({type: 'EMPTY_GLOBAL_STATE'})
         }
     }
 }

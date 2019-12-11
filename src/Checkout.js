@@ -8,10 +8,13 @@ const Checkout = () => {
 
     return(
         <main className={css.Main}>
-            <div className={css.CheckDiv}>
 
+            <div className={css.CheckContainer}>
+                <div className={css.CheckDiv}>
+
+                </div>
             </div>
-
+            
             <h1 className={css.h1}>Successful Purchase </h1>
             <h3 className={css.h3}>Your order will be delivered in the next 3 days</h3>
             <Link to={'/'} style={{color: 'black'}}>

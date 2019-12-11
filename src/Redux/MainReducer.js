@@ -74,6 +74,13 @@ const initialState = {
 
       return {...previousState}
     }
+
+    else if (action.type === 'EMPTY_GLOBAL_STATE'){
+      previousState.totalCart = 0;
+      previousState.shopItems = [];
+
+      return {...previousState}
+    }
     return {...previousState}
   }
   
