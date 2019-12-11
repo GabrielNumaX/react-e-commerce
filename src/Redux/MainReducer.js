@@ -68,6 +68,12 @@ const initialState = {
 
       return {...previousState};
     }
+
+    else if (action.type === 'SET_CART_FROM_LOCAL_STORAGE'){
+      previousState.totalCart = JSON.parse(action.jsonFromLocalStorage)
+
+      return {...previousState}
+    }
     return {...previousState}
   }
   

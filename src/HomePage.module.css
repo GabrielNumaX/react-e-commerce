@@ -1,6 +1,8 @@
 
 .MainDiv {
     margin-top: 60px;
+    /* this is to solve the footer from sticking to the middle of the screen on load */
+    min-height: calc(100vh - 60px);
 }
 
 .h2 {

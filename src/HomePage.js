@@ -5,6 +5,7 @@ import css from './HomePage.module.css';
 
 import Clothes from './Clothes';
 import Accessories from './Accessories';
+import Checkout from './Checkout';
 
 
 class HomePage extends Component {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Component} from 'react';
-
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 import css from './ShopPage.module.css';
@@ -20,34 +20,52 @@ class ShopPage extends Component {
         if(!Array.isArray(this.props.shopItemsArr.length) && !this.props.shopItemsArr.length){
                    
             const prodList = localStorage.getItem('prodList');
+            const shopCart = localStorage.getItem('shopCart')
 
-            this.props.setFromLocalStorage(prodList);   
+            this.props.setFromLocalStorage(prodList);
+            this.props.setCartFromLocalStorage(shopCart);   
 
-            console.log('if didMount');
+            // console.log('if didMount');
         }
 
-    
-        this.setState({
-            totalItems: this.props.shopCartCount
-        })
+        // console.log('out if didMount');
+
+        // this.setState({
+        //     totalItems: this.props.shopCartCount
+        // })
 
     
-        this.price = this.props.shopItemsArr.reduce((acc, item) => {
+        // this.price = this.props.shopItemsArr.reduce((acc, item) => {
 
-            return acc + (item.price * item.count);
+        //     return acc + (item.price * item.count);
 
-        }, 0)
+        // }, 0)
 
-        this.setState({
-            totalPrice: this.price
-        })
+        // this.setState({
+        //     totalPrice: this.price
+        // })
+
+        // console.log('end didMount');
+
+        // console.log(this.price);
+        // console.log(this.state.totalPrice);
+        // console.log(this.props.shopItemsArr);
     
     }
 
 
     render() {
 
-        console.log(this.props.shopItemsArr)
+        // console.log(this.props.shopItemsArr)
+
+        const price = this.props.shopItemsArr.reduce((acc, item) => {
+
+            // console.log(acc + (item.price * item.count));
+            return acc + item.price * item.count;            
+
+        }, 0)
+
+        // console.log(price);
 
         const imgDiv = this.props.shopItemsArr.map((item, pos) => {
 
@@ -72,7 +90,7 @@ class ShopPage extends Component {
 
                     <h2>Checkout</h2>
                     
-                    <h5>Total Items: {this.state.totalItems}</h5>
+                    <h5>Total Items: {this.props.shopCartCount}</h5>
 
                 </div>
 
@@ -86,9 +104,11 @@ class ShopPage extends Component {
 
                         <h2>Total Amount</h2>
 
-                        <h5>Total Order: $ {this.state.totalPrice}</h5>
+                        <h5>Total Order: $ {price}</h5> {/* calculation from this.props.shopItemsArr*/}
 
-                        <button>Buy Now</button>
+                        <Link to={'/checkout'}>
+                            <button>Buy Now</button>
+                        </Link>
 
                     </aside>
 
@@ -111,6 +131,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         setFromLocalStorage: (json) => {
             dispatch({type: 'SET_FROM_LOCAL_STORAGE', jsonFromLocalStorage: json})
+        },
+        setCartFromLocalStorage: (json) => {
+            dispatch({type: 'SET_CART_FROM_LOCAL_STORAGE', jsonFromLocalStorage: json})
         }
     }
 }

@@ -8,6 +8,7 @@ import Header from './Header';
 import HomePage from './HomePage';
 import Details from './Details';
 import ShopPage from './ShopPage';
+import Checkout from './Checkout';
 import Footer from './Footer';
 
 class App extends Component {
@@ -37,7 +38,7 @@ class App extends Component {
                   // onBtnClick={() => this.props.onItemShop(obj)}
                   /> } />
             <Route path="/confirmation" component={ShopPage} />
-                                        
+            <Route path="/checkout" component={Checkout} />                                     
           </Switch>
 
            <Footer></Footer>
