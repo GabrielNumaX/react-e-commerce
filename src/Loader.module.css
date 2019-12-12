@@ -1,0 +1,23 @@
+.LoaderDiv {
+    margin-top: 200px;
+}
+
+.LoaderH1 {
+    font-size: 48px;
+    text-align: center;
+    color: black;
+    animation: animate 2s linear infinite;
+    animation-direction: alternate;
+} 
+
+@keyframes animate {
+    0% {
+      color: black;
+    }
+    50% {
+        color: #bbb;
+    }
+    100% {
+      color: black;
+    }
+}
