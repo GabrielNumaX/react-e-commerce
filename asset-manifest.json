@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-e-commerce/static/css/main.4fca626e.chunk.css",
+    "main.js": "/react-e-commerce/static/js/main.31f79a2a.chunk.js",
+    "main.js.map": "/react-e-commerce/static/js/main.31f79a2a.chunk.js.map",
+    "runtime-main.js": "/react-e-commerce/static/js/runtime-main.cc6c1b5d.js",
+    "runtime-main.js.map": "/react-e-commerce/static/js/runtime-main.cc6c1b5d.js.map",
+    "static/js/2.fc9cc815.chunk.js": "/react-e-commerce/static/js/2.fc9cc815.chunk.js",
+    "static/js/2.fc9cc815.chunk.js.map": "/react-e-commerce/static/js/2.fc9cc815.chunk.js.map",
+    "index.html": "/react-e-commerce/index.html",
+    "precache-manifest.eb43f60dd1734a78ddf90fd574947b9c.js": "/react-e-commerce/precache-manifest.eb43f60dd1734a78ddf90fd574947b9c.js",
+    "service-worker.js": "/react-e-commerce/service-worker.js",
+    "static/css/main.4fca626e.chunk.css.map": "/react-e-commerce/static/css/main.4fca626e.chunk.css.map",
+    "static/media/shopping-cart-png.jpg": "/react-e-commerce/static/media/shopping-cart-png.c554f19c.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cc6c1b5d.js",
+    "static/js/2.fc9cc815.chunk.js",
+    "static/css/main.4fca626e.chunk.css",
+    "static/js/main.31f79a2a.chunk.js"
+  ]
+}
