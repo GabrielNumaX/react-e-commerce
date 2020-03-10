@@ -53,7 +53,7 @@ class Details extends Component {
 
         localStorage.setItem('shopCart', JSON.stringify(this.props.shopCart));
 
-        if(!Array.isArray(this.props.shopItemsArr.length) && !this.props.shopItemsArr.length){
+        if(!Array.isArray(this.props.shopItemsArr) && !this.props.shopItemsArr.length){
 
             this.props.loadCurrentObj(this.state.uniqueProdObj);
 
