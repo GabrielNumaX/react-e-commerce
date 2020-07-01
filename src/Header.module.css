@@ -56,6 +56,7 @@ border-radius: 50%;
 background-color: white;
 text-align: center;
 padding-bottom: 2px;
+line-height: 20px;
 }
 
 .profilePic {
@@ -64,4 +65,73 @@ width: 50px;
 background-color: white;
 border-radius: 50%;
 margin: auto;
+}
+
+@media (max-width: 380px) {
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        align-items: center;
+        background-color: lightblue;
+        position: fixed;
+        top: 0;
+        height: 40px;
+        width: 100%;
+      }
+      
+      .divLinks {
+          margin-left: 5px;
+      }
+      
+      .Shoplane {
+          display: inline;
+          text-decoration: none;
+          color: black;
+          font-size: 16px;
+          margin-left: 2px;
+          margin-right: 2px;
+      }
+         
+      .divShop {
+          margin-right: 5px;
+      }
+      
+      .divShop img {
+      display: inline-block;
+      }
+      
+      .shoppingCart {
+      height: 14px;
+      display: inline-block;
+      position: relative;
+      margin-right: 10px;
+      margin-bottom: 0;
+      cursor: pointer;
+      border-radius: 50%;
+      }
+      
+      .shopCounter {
+      display: inline-block;
+      position: absolute;
+      top: 7px;
+      right: 34px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: white;
+      text-align: center;
+      padding-bottom: 2px;
+      font-size: 8px;
+      line-height: 10px;
+      }
+      
+      .profilePic {
+      display: inline-block;
+      width: 20px;
+      background-color: white;
+      border-radius: 50%;
+      margin-right: 4px;
+      }
 }

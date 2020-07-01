@@ -19,3 +19,12 @@
     justify-content: space-evenly;
     align-items: flex-start;
 }
+
+@media (max-width: 380px) {
+
+    .h2 {
+        font-size: 22px;
+        padding: 0 12px 22px;
+    }
+    
+}

@@ -136,3 +136,142 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+
+@media (max-width: 380px) {
+
+        
+    .ShopDiv {
+        margin-top: 50px;
+        height: auto;
+        width: 100%;   
+    }
+
+    .CheckoutDiv {
+        height: 100px;
+        width: 100%;
+    }
+
+    .CheckoutDiv h2, .CheckoutDiv h5 {
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        padding-left: 10%;
+    }
+
+    .CheckoutDiv h2 {
+        font-size: 26px;
+    }
+
+    .CheckoutDiv h5 {
+        font-size: 18px;
+        margin-top: 5px;
+    }
+
+    .Main {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        margin-bottom: 30px;
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .LeftProdList {
+        width: 100%;
+        min-height: 230px;
+        overflow: auto;
+        background-color: lightblue;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .ImgDiv {
+        width: 96%;
+        height: 110px;
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        /* align-items: flex-start; */
+        margin: 4px 0;
+    }
+
+    /* .ImgDiv:last-of-type {
+        margin-bottom: 20px;
+    } */
+
+    .ImgDiv > img {
+        /* width: 15%; */
+       width: 26%;
+       height: auto;
+    }
+    .TextDiv {
+        width: 65%;
+        height: 100%;
+        /* background-color: yellow; */
+        display: flex;
+        flex-direction: column;
+        /* justify-content: flex-start; */
+        /* align-items: flex-start; */
+    }
+    .TextDiv > h3, .TextDiv > h4, .TextDiv > h5 {
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        padding-left: 4%;
+    }
+
+    /* name */
+    .TextDiv > h3 {
+        padding-top: 2px;
+        font-size: 16px;
+    }
+
+    /* quantity */
+    .TextDiv > h5 {
+        padding-top: 2px;
+        font-size: 14px;
+    }
+
+    /* price */
+    .TextDiv > h4 {
+        padding-top: 2px;
+    }
+
+    .RightAmount {
+        width: 100%;
+        height: 250px;
+        background-color: lightblue;
+        text-align: left;
+    }
+
+    .RightAmount h2, .RightAmount h5 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .RightAmount h2 {
+        margin-top: 10px;
+        margin-left: 8%;
+    }
+
+    .RightAmount h5 {
+        font-size: 18px;
+        margin-top: 110px;
+        margin-left: 8%;
+    }
+
+    button {
+        margin-top: 20px;
+        margin-left: 8%;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}

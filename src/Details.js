@@ -220,9 +220,9 @@ class Details extends Component {
                         {imgs}
                         </div>
 
-                            <button onClick={this.onItemAdd}>
-                                Add To Cart
-                            </button>
+                        <button onClick={this.onItemAdd}>
+                            Add To Cart
+                        </button>
                     </div>
                     
                 </aside>
